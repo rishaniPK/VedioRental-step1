@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.TC_MovieRental = new System.Windows.Forms.TabControl();
             this.Tc_customers = new System.Windows.Forms.TabPage();
             this.DGV_Customers = new System.Windows.Forms.DataGridView();
@@ -40,6 +41,9 @@
             this.txt_CustomerAddress = new System.Windows.Forms.TextBox();
             this.txt_CustomerLastName = new System.Windows.Forms.TextBox();
             this.tc_movie = new System.Windows.Forms.TabPage();
+            this.txt_MovieCopies = new System.Windows.Forms.TextBox();
+            this.txt_MovieGener = new System.Windows.Forms.TextBox();
+            this.txt_MovieRating = new System.Windows.Forms.TextBox();
             this.btn_AllMovie = new System.Windows.Forms.Button();
             this.txt_MovieYear = new System.Windows.Forms.TextBox();
             this.btn_AddMovie = new System.Windows.Forms.Button();
@@ -51,6 +55,7 @@
             this.btn_DeleteMovie = new System.Windows.Forms.Button();
             this.DGV_Movies = new System.Windows.Forms.DataGridView();
             this.Tc_rentals = new System.Windows.Forms.TabPage();
+            this.btn_rentedOut = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_IssueMovie = new System.Windows.Forms.Button();
             this.DTP_ReturnDate = new System.Windows.Forms.DateTimePicker();
@@ -59,7 +64,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DGV_Rentals = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_rentedOut = new System.Windows.Forms.Button();
             this.TC_MovieRental.SuspendLayout();
             this.Tc_customers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Customers)).BeginInit();
@@ -83,6 +87,8 @@
             // 
             // Tc_customers
             // 
+            this.Tc_customers.BackColor = System.Drawing.Color.Transparent;
+            this.Tc_customers.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Tc_customers.BackgroundImage")));
             this.Tc_customers.Controls.Add(this.DGV_Customers);
             this.Tc_customers.Controls.Add(this.btn_deleteCustomer);
             this.Tc_customers.Controls.Add(this.Btn_AddCustomer);
@@ -98,16 +104,16 @@
             this.Tc_customers.Size = new System.Drawing.Size(585, 416);
             this.Tc_customers.TabIndex = 0;
             this.Tc_customers.Text = "Customer";
-            this.Tc_customers.UseVisualStyleBackColor = true;
             // 
             // DGV_Customers
             // 
+            this.DGV_Customers.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
             this.DGV_Customers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Customers.Location = new System.Drawing.Point(3, 6);
             this.DGV_Customers.Name = "DGV_Customers";
             this.DGV_Customers.Size = new System.Drawing.Size(582, 335);
             this.DGV_Customers.TabIndex = 0;
-            this.DGV_Customers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Customers_CellContentClick);
+            this.DGV_Customers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Customers_CellContentClick_1);
             // 
             // btn_deleteCustomer
             // 
@@ -117,6 +123,7 @@
             this.btn_deleteCustomer.TabIndex = 1;
             this.btn_deleteCustomer.Text = "Delete Customer";
             this.btn_deleteCustomer.UseVisualStyleBackColor = true;
+            this.btn_deleteCustomer.Click += new System.EventHandler(this.Btn_deleteCustomer_Click);
             // 
             // Btn_AddCustomer
             // 
@@ -136,14 +143,15 @@
             this.btn_UpdateCustomers.TabIndex = 2;
             this.btn_UpdateCustomers.Text = "Update Customer";
             this.btn_UpdateCustomers.UseVisualStyleBackColor = true;
+            this.btn_UpdateCustomers.Click += new System.EventHandler(this.Btn_UpdateCustomers_Click);
             // 
             // txt_CustomerID
             // 
-            this.txt_CustomerID.Enabled = false;
             this.txt_CustomerID.Location = new System.Drawing.Point(89, 347);
             this.txt_CustomerID.Name = "txt_CustomerID";
             this.txt_CustomerID.Size = new System.Drawing.Size(37, 20);
             this.txt_CustomerID.TabIndex = 6;
+            this.txt_CustomerID.Text = "ID";
             // 
             // txt_CustomerContact
             // 
@@ -179,6 +187,9 @@
             // 
             // tc_movie
             // 
+            this.tc_movie.Controls.Add(this.txt_MovieCopies);
+            this.tc_movie.Controls.Add(this.txt_MovieGener);
+            this.tc_movie.Controls.Add(this.txt_MovieRating);
             this.tc_movie.Controls.Add(this.btn_AllMovie);
             this.tc_movie.Controls.Add(this.txt_MovieYear);
             this.tc_movie.Controls.Add(this.btn_AddMovie);
@@ -198,9 +209,33 @@
             this.tc_movie.UseVisualStyleBackColor = true;
             this.tc_movie.Click += new System.EventHandler(this.Tc_movie_Click);
             // 
+            // txt_MovieCopies
+            // 
+            this.txt_MovieCopies.Location = new System.Drawing.Point(433, 378);
+            this.txt_MovieCopies.Name = "txt_MovieCopies";
+            this.txt_MovieCopies.Size = new System.Drawing.Size(59, 20);
+            this.txt_MovieCopies.TabIndex = 27;
+            this.txt_MovieCopies.Text = "Copies";
+            // 
+            // txt_MovieGener
+            // 
+            this.txt_MovieGener.Location = new System.Drawing.Point(498, 378);
+            this.txt_MovieGener.Name = "txt_MovieGener";
+            this.txt_MovieGener.Size = new System.Drawing.Size(81, 20);
+            this.txt_MovieGener.TabIndex = 26;
+            this.txt_MovieGener.Text = "Genre";
+            // 
+            // txt_MovieRating
+            // 
+            this.txt_MovieRating.Location = new System.Drawing.Point(181, 338);
+            this.txt_MovieRating.Name = "txt_MovieRating";
+            this.txt_MovieRating.Size = new System.Drawing.Size(75, 20);
+            this.txt_MovieRating.TabIndex = 25;
+            this.txt_MovieRating.Text = "Rating";
+            // 
             // btn_AllMovie
             // 
-            this.btn_AllMovie.Location = new System.Drawing.Point(272, 376);
+            this.btn_AllMovie.Location = new System.Drawing.Point(247, 375);
             this.btn_AllMovie.Name = "btn_AllMovie";
             this.btn_AllMovie.Size = new System.Drawing.Size(75, 23);
             this.btn_AllMovie.TabIndex = 24;
@@ -210,24 +245,25 @@
             // 
             // txt_MovieYear
             // 
-            this.txt_MovieYear.Location = new System.Drawing.Point(447, 339);
+            this.txt_MovieYear.Location = new System.Drawing.Point(377, 339);
             this.txt_MovieYear.Name = "txt_MovieYear";
-            this.txt_MovieYear.Size = new System.Drawing.Size(90, 20);
+            this.txt_MovieYear.Size = new System.Drawing.Size(82, 20);
             this.txt_MovieYear.TabIndex = 23;
             this.txt_MovieYear.Text = "Year";
             // 
             // btn_AddMovie
             // 
-            this.btn_AddMovie.Location = new System.Drawing.Point(35, 338);
+            this.btn_AddMovie.Location = new System.Drawing.Point(19, 338);
             this.btn_AddMovie.Name = "btn_AddMovie";
             this.btn_AddMovie.Size = new System.Drawing.Size(89, 20);
             this.btn_AddMovie.TabIndex = 16;
             this.btn_AddMovie.Text = "Add Movie";
             this.btn_AddMovie.UseVisualStyleBackColor = true;
+            this.btn_AddMovie.Click += new System.EventHandler(this.Btn_AddMovie_Click);
             // 
             // txt_MovieRentalCost
             // 
-            this.txt_MovieRentalCost.Location = new System.Drawing.Point(359, 339);
+            this.txt_MovieRentalCost.Location = new System.Drawing.Point(344, 377);
             this.txt_MovieRentalCost.Name = "txt_MovieRentalCost";
             this.txt_MovieRentalCost.Size = new System.Drawing.Size(82, 20);
             this.txt_MovieRentalCost.TabIndex = 22;
@@ -235,16 +271,17 @@
             // 
             // btn_UpadateMovie
             // 
-            this.btn_UpadateMovie.Location = new System.Drawing.Point(145, 376);
+            this.btn_UpadateMovie.Location = new System.Drawing.Point(130, 376);
             this.btn_UpadateMovie.Name = "btn_UpadateMovie";
             this.btn_UpadateMovie.Size = new System.Drawing.Size(101, 23);
             this.btn_UpadateMovie.TabIndex = 18;
             this.btn_UpadateMovie.Text = "Update Movie";
             this.btn_UpadateMovie.UseVisualStyleBackColor = true;
+            this.btn_UpadateMovie.Click += new System.EventHandler(this.Btn_UpadateMovie_Click);
             // 
             // txt_MovieTitle
             // 
-            this.txt_MovieTitle.Location = new System.Drawing.Point(174, 339);
+            this.txt_MovieTitle.Location = new System.Drawing.Point(272, 339);
             this.txt_MovieTitle.Name = "txt_MovieTitle";
             this.txt_MovieTitle.Size = new System.Drawing.Size(92, 20);
             this.txt_MovieTitle.TabIndex = 20;
@@ -260,7 +297,7 @@
             // 
             // txt_MoviePlot
             // 
-            this.txt_MoviePlot.Location = new System.Drawing.Point(272, 339);
+            this.txt_MoviePlot.Location = new System.Drawing.Point(474, 339);
             this.txt_MoviePlot.Name = "txt_MoviePlot";
             this.txt_MoviePlot.Size = new System.Drawing.Size(81, 20);
             this.txt_MoviePlot.TabIndex = 21;
@@ -268,21 +305,23 @@
             // 
             // btn_DeleteMovie
             // 
-            this.btn_DeleteMovie.Location = new System.Drawing.Point(33, 376);
+            this.btn_DeleteMovie.Location = new System.Drawing.Point(19, 376);
             this.btn_DeleteMovie.Name = "btn_DeleteMovie";
             this.btn_DeleteMovie.Size = new System.Drawing.Size(89, 23);
             this.btn_DeleteMovie.TabIndex = 17;
             this.btn_DeleteMovie.Text = "Delete Movie";
             this.btn_DeleteMovie.UseVisualStyleBackColor = true;
+            this.btn_DeleteMovie.Click += new System.EventHandler(this.Btn_DeleteMovie_Click);
             // 
             // DGV_Movies
             // 
+            this.DGV_Movies.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
             this.DGV_Movies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Movies.Location = new System.Drawing.Point(3, 6);
+            this.DGV_Movies.Location = new System.Drawing.Point(6, 7);
             this.DGV_Movies.Name = "DGV_Movies";
             this.DGV_Movies.Size = new System.Drawing.Size(586, 326);
             this.DGV_Movies.TabIndex = 0;
-            this.DGV_Movies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Movies_CellContentClick);
+            this.DGV_Movies.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Movies_CellContentClick);
             // 
             // Tc_rentals
             // 
@@ -301,6 +340,16 @@
             this.Tc_rentals.TabIndex = 2;
             this.Tc_rentals.Text = "Rentals";
             this.Tc_rentals.UseVisualStyleBackColor = true;
+            // 
+            // btn_rentedOut
+            // 
+            this.btn_rentedOut.Location = new System.Drawing.Point(435, 376);
+            this.btn_rentedOut.Name = "btn_rentedOut";
+            this.btn_rentedOut.Size = new System.Drawing.Size(75, 23);
+            this.btn_rentedOut.TabIndex = 7;
+            this.btn_rentedOut.Text = "Rented Out";
+            this.btn_rentedOut.UseVisualStyleBackColor = true;
+            this.btn_rentedOut.Click += new System.EventHandler(this.Btn_rentedOut_Click);
             // 
             // button1
             // 
@@ -356,6 +405,7 @@
             // 
             // DGV_Rentals
             // 
+            this.DGV_Rentals.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.DGV_Rentals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Rentals.Location = new System.Drawing.Point(3, 3);
             this.DGV_Rentals.Name = "DGV_Rentals";
@@ -365,27 +415,19 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(164, 23);
+            this.label3.Font = new System.Drawing.Font("Old English Text MT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Navy;
+            this.label3.Location = new System.Drawing.Point(143, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(304, 25);
+            this.label3.Size = new System.Drawing.Size(367, 32);
             this.label3.TabIndex = 2;
             this.label3.Text = "Watch It Movie Rental Shop";
-            // 
-            // btn_rentedOut
-            // 
-            this.btn_rentedOut.Location = new System.Drawing.Point(435, 376);
-            this.btn_rentedOut.Name = "btn_rentedOut";
-            this.btn_rentedOut.Size = new System.Drawing.Size(75, 23);
-            this.btn_rentedOut.TabIndex = 7;
-            this.btn_rentedOut.Text = "Rented Out";
-            this.btn_rentedOut.UseVisualStyleBackColor = true;
-            this.btn_rentedOut.Click += new System.EventHandler(this.Btn_rentedOut_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(651, 548);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TC_MovieRental);
@@ -440,6 +482,9 @@
         private System.Windows.Forms.TextBox txt_MoviePlot;
         private System.Windows.Forms.Button btn_DeleteMovie;
         private System.Windows.Forms.Button btn_rentedOut;
+        private System.Windows.Forms.TextBox txt_MovieGener;
+        private System.Windows.Forms.TextBox txt_MovieRating;
+        private System.Windows.Forms.TextBox txt_MovieCopies;
     }
 }
 
