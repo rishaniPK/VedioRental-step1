@@ -275,5 +275,25 @@ namespace VedioRental
             txt_CustomerAddress.Text = "";
             loadDatabaseCustomer();
         }
+
+        private void CustomerWithMoerVideo_Click(object sender, EventArgs e)
+        {
+            DGV_Rentals.DataSource = null;
+            try
+            {
+                string queryObj = "Select * from CustomerWithMoreMovie";
+                DGV_Rentals.DataSource = obj_Database.FillDGV(queryObj);
+                DGV_Rentals.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Btn_IssueMovie_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

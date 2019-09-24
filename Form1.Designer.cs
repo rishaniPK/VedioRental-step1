@@ -64,6 +64,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DGV_Rentals = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.CustomerWithMoerVideo = new System.Windows.Forms.Button();
             this.TC_MovieRental.SuspendLayout();
             this.Tc_customers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Customers)).BeginInit();
@@ -325,6 +326,7 @@
             // 
             // Tc_rentals
             // 
+            this.Tc_rentals.Controls.Add(this.CustomerWithMoerVideo);
             this.Tc_rentals.Controls.Add(this.btn_rentedOut);
             this.Tc_rentals.Controls.Add(this.button1);
             this.Tc_rentals.Controls.Add(this.btn_IssueMovie);
@@ -343,7 +345,7 @@
             // 
             // btn_rentedOut
             // 
-            this.btn_rentedOut.Location = new System.Drawing.Point(435, 376);
+            this.btn_rentedOut.Location = new System.Drawing.Point(293, 373);
             this.btn_rentedOut.Name = "btn_rentedOut";
             this.btn_rentedOut.Size = new System.Drawing.Size(75, 23);
             this.btn_rentedOut.TabIndex = 7;
@@ -353,7 +355,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(464, 332);
+            this.button1.Location = new System.Drawing.Point(389, 332);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 6;
@@ -362,12 +364,13 @@
             // 
             // btn_IssueMovie
             // 
-            this.btn_IssueMovie.Location = new System.Drawing.Point(349, 332);
+            this.btn_IssueMovie.Location = new System.Drawing.Point(293, 332);
             this.btn_IssueMovie.Name = "btn_IssueMovie";
             this.btn_IssueMovie.Size = new System.Drawing.Size(75, 23);
             this.btn_IssueMovie.TabIndex = 5;
             this.btn_IssueMovie.Text = "Issue Movie";
             this.btn_IssueMovie.UseVisualStyleBackColor = true;
+            this.btn_IssueMovie.Click += new System.EventHandler(this.Btn_IssueMovie_Click);
             // 
             // DTP_ReturnDate
             // 
@@ -422,6 +425,16 @@
             this.label3.Size = new System.Drawing.Size(367, 32);
             this.label3.TabIndex = 2;
             this.label3.Text = "Watch It Movie Rental Shop";
+            // 
+            // CustomerWithMoerVideo
+            // 
+            this.CustomerWithMoerVideo.Location = new System.Drawing.Point(389, 373);
+            this.CustomerWithMoerVideo.Name = "CustomerWithMoerVideo";
+            this.CustomerWithMoerVideo.Size = new System.Drawing.Size(152, 23);
+            this.CustomerWithMoerVideo.TabIndex = 8;
+            this.CustomerWithMoerVideo.Text = "Customer With Moer Video";
+            this.CustomerWithMoerVideo.UseVisualStyleBackColor = true;
+            this.CustomerWithMoerVideo.Click += new System.EventHandler(this.CustomerWithMoerVideo_Click);
             // 
             // Form1
             // 
@@ -485,6 +498,7 @@
         private System.Windows.Forms.TextBox txt_MovieGener;
         private System.Windows.Forms.TextBox txt_MovieRating;
         private System.Windows.Forms.TextBox txt_MovieCopies;
+        private System.Windows.Forms.Button CustomerWithMoerVideo;
     }
 }
 
