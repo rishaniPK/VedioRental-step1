@@ -64,7 +64,7 @@ namespace VedioRental.Database
               }
 
           }*/
-        public int PriceCalculation(int days, int rentalPrice, int rentalPeriod)
+      /*  public int PriceCalculation(int days, int rentalPrice, int rentalPeriod)
         {
 
             if (days < rentalPeriod)
@@ -76,7 +76,7 @@ namespace VedioRental.Database
             }
             else
                 return days * rentalPrice;
-        }
+        } */
         public string CustomerInsert(string FirstName, string LastName, string Address, string Phone)
         {
             //This method is used to insert data into movie table
